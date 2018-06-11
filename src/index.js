@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Calculator from './components/calculator'; 
+import '../styles/styles.css';
 
 
 class App extends Component {
     render() {
-        return(
-            <div>
-                <h3>Test</h3>
+        return (
+            <div className="container">
+                <Calculator/>
             </div>
         )
     }
 }
 
-
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
