@@ -12,7 +12,8 @@ export default class Calulator extends Component {
                 interest: '',
                 years: '',
                 totalPayment: '',
-                monthlyPayment: ''        
+                monthlyPayment: '',
+                calculating: false    
         }
     }
     
@@ -25,11 +26,22 @@ calculateResults(a, i, y) {
   const totalPayment = results.totalPayment;
   const monthlyPayment = results.monthlyPayment;
 
-  this.setState({totalPayment,monthlyPayment })
+  this.setState({
+    ...this.state, 
+    calculating: true
+  })
+  setTimeout(() => {
+    this.setState({
+      ...this.state,
+      totalPayment,
+      monthlyPayment,
+      calculating: false
+     })
+  },2000)
 }
 
   render() {
-    const {amount, interest, years, totalPayment, monthlyPayment} = this.state;  
+    const {amount, interest, years, totalPayment, monthlyPayment, calculating} = this.state;  
 
     return (
       <div>          
@@ -37,7 +49,12 @@ calculateResults(a, i, y) {
         Interest <InputRange value={this.state.interest} changed={(e) => this.handleChange('interest', e.target.value)}/>
         Years <InputRange value={this.state.years} changed={(e) => this.handleChange('years', e.target.value)}/>
       <br/>
-       <Button calculate={() => this.calculateResults(amount, interest, years)}/>
+       <Button calculate={() => this.calculateResults(amount, interest, years)}>
+        {calculating ? 
+        <div> <i className="fa fa-spinner fa-spin"></i> Calculating..</div>
+        : 
+         "Calculate"}
+      </Button>
       <br/>
        <Result paymentType="Total Payment" paymentAmount={totalPayment} />
        <Result paymentType="Montly Payment" paymentAmount={monthlyPayment}/>
