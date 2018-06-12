@@ -4,8 +4,7 @@
   "description": "react-redux-interest-calculator",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
-    "dev-server": "webpack-dev-server"
+    "start": "webpack && webpack-dev-server"
   },
   "repository": {
     "type": "git",
