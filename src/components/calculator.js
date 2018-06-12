@@ -18,7 +18,11 @@ export default class Calculator extends Component {
     }
 
 handleChange(name, value) {
-  this.setState({ [name]: value});
+  this.setState({ 
+    ...this.state,
+    [name]: value
+  }
+);
 }
 
 calculateResults(amount, interest, years) {
