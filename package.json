@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/kamilpastuszka/react-firebase-form.git" 
   },
   "author": "Kamil Pastuszka",
   "license": "MIT",
