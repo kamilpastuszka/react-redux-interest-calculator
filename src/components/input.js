@@ -1,6 +1,6 @@
 import React from 'react'
 
- export const InputRange = (props) => (
+ export const Input = (props) => (
         <div>
             {props.name}
             <input type="text" 

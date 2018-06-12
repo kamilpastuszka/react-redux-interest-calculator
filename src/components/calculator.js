@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {Button} from './button';
-import {InputRange} from './inputRange';
+import {Input} from './input';
 import {Result} from './result';
-import * as utilis from '../utilis/utilis';
+import * as utility from '../utility/utility';
 
-export default class Calulator extends Component {
+export default class Calculator extends Component {
     constructor() {
         super();
         this.state = {
@@ -16,13 +16,13 @@ export default class Calulator extends Component {
                 calculating: false    
         }
     }
-    
+
 handleChange(name, value) {
   this.setState({ [name]: value});
 }
 
-calculateResults(a, i, y) {
-  const results = utilis.calculateInterest(a, i, y);
+calculateResults(amount, interest, years) {
+  const results = utility.calculateInterest(amount, interest, years);
   const totalPayment = results.totalPayment;
   const monthlyPayment = results.monthlyPayment;
 
@@ -45,9 +45,9 @@ calculateResults(a, i, y) {
 
     return (
       <div>          
-        Amount <InputRange value={this.state.amount} changed={(e) => this.handleChange('amount', e.target.value)}/>
-        Interest <InputRange value={this.state.interest} changed={(e) => this.handleChange('interest', e.target.value)}/>
-        Years <InputRange value={this.state.years} changed={(e) => this.handleChange('years', e.target.value)}/>
+        Amount <Input value={this.state.amount} changed={(e) => this.handleChange('amount', e.target.value)}/>
+        Interest <Input value={this.state.interest} changed={(e) => this.handleChange('interest', e.target.value)}/>
+        Years <Input value={this.state.years} changed={(e) => this.handleChange('years', e.target.value)}/>
       <br/>
        <Button calculate={() => this.calculateResults(amount, interest, years)}>
         {calculating ? 
