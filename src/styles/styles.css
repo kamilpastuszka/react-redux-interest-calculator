@@ -12,10 +12,6 @@ button, input {
   width: 100%;
 }
 
-.container {
-  width: 230px;
-}
-
 .btn-success {
   background-color: #2c1735;
 }
@@ -24,4 +20,6 @@ button, input {
   background-color: #442d46;
 }
 
-
+.main {
+  width: 230px;
+}
