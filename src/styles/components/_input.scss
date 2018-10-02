@@ -1,0 +1,92 @@
+input {
+  width: 100%;
+  height: 20%;
+}
+
+input[type="range"] {
+  display: inline-block;
+  width: 100%;
+  height: 20px;
+  background: darken(rgb(32, 32, 121), 20%);
+  // background: linear-gradient(to right, $warning 0%, $success 80%);
+  border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+
+    &::-webkit-slider-thumb,
+    &::-webkit-slider-runnable-track {
+      outline: none;
+    }
+  }
+
+  &::-webkit-slider-runnable-track,
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    outline: none;
+  }
+
+  &::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border: 3px solid $white;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px 0 rgba(20, 75, 102, 0.15);
+    outline: none;
+  }
+
+  &::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background-color: $white;
+    border: 4px solid $white;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px 0 rgba(20, 75, 102, 0.15);
+    outline: none;
+  }
+
+  &::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border: 3px solid $white;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px 0 rgba(20, 75, 102, 0.15);
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    height: 20px;
+    width: 100%;
+    background: red;
+    //background: linear-gradient(to right, transparent calc(var(--value) * 1%), $gray-700 0);
+    border-radius: 10px;
+  }
+
+  &::-moz-range-track {
+    height: 20px;
+    background: linear-gradient(
+      to right,
+      transparent calc(var(--value) * 1%),
+      $gray-700 0
+    );
+    border-radius: 10px;
+  }
+
+  &::-ms-track {
+    background: linear-gradient(90deg, $warning 0%, $success 100%);
+    height: 20px;
+  }
+
+  &::-ms-fill-lower {
+    background-color: HotPink;
+  }
+
+  &::-ms-fill-upper {
+    background-color: black;
+  }
+}

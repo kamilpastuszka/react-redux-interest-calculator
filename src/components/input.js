@@ -1,14 +1,27 @@
-import React from 'react'
+import React from "react";
 
- export const Input = (props) => (
-        <div>
-            <input type="text" 
-            value={props.value} name={props.name}
-            onChange={props.changed}
-            />
+export const Input = props => (
+  <div>
+    <div className="row space-between">
+      <div className="float-right">
+        <div className="col"> {props.name} </div>
+        <div className="col">
+          <h3> {props.value}</h3>
         </div>
-    )
+      </div>
+    </div>
 
-
-
-  
+    <div className="row">
+      <input
+        className="range-input"
+        type="range"
+        min="1"
+        max="100"
+        step="1"
+        defaultValue={props.value}
+        name={props.name}
+        onChange={props.changed}
+      />
+    </div>
+  </div>
+);

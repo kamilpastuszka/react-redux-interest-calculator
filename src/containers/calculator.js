@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Button} from '../components/button';
 import {Input} from '../components/input';
 import {Result} from '../components/result';
+import {Loader} from '../components/loader';
 import * as utility from '../utility/utility';
 import { connect } from 'react-redux';
 import {calculateResults} from '../store/actions/actions';
@@ -9,22 +10,26 @@ import {calculateResults} from '../store/actions/actions';
 class Calculator extends Component {
   render() {
     const {amount, interest, years, totalPayment, monthlyPayment, calculating} = this.props;  
+console.log('inside render'); 
 
+
+const Results = () => (
+  <div>
+  <Result paymentType="Total Payment" paymentAmount={totalPayment} />
+  <Result paymentType="Monthly Payment" paymentAmount={monthlyPayment}/>
+  </div>
+)
     return (
-      <div className="main">          
-        Amount <Input value={amount} changed={this.props.setAmount}/>
-        Interest in % <Input value={interest} changed={this.props.setInterest}/>
-        Years <Input value={years} changed={this.props.setYears}/>
+      <div className="container">     
+        <Input name="Amount" value={amount} changed={this.props.setAmount}/>
+         <Input name="Interest in %" value={interest} changed={this.props.setInterest}/>
+        <Input name="Years" value={years} changed={this.props.setYears}/>
       <br/>
        <Button calculate={() => this.props.onCalculate(amount, interest, years)}>
-        {this.props.calculating ? 
-        <div> <i className="fa fa-spinner fa-spin"></i> Calculating..</div>
-        : 
-         "Calculate"}
+        {calculating ? "Calculating.." : "Calculate"}
       </Button>
-      <br/>
-       <Result paymentType="Total Payment" paymentAmount={totalPayment} />
-       <Result paymentType="Monthly Payment" paymentAmount={monthlyPayment}/>
+        <br/>
+        {calculating ? <Loader/> : <Results/>}
       </div>
     )
   }

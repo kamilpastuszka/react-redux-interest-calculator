@@ -1,9 +1,9 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    amount: '',
-    interest: '',
-    years: ''
+    amount: '2',
+    interest: '4',
+    years: '1'
   }
   
   

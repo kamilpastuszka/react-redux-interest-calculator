@@ -27,7 +27,7 @@ export const calculateResults = (amount, interest, years) => {
             if (totalPayment && totalPayment) {
                 setTimeout(() => {
                     dispatch(saveResults(totalPayment, monthlyPayment))
-                }, 2000)
+                }, 2500)
             }
 
         }
