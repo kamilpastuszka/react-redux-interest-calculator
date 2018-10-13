@@ -62,8 +62,12 @@ input[type="range"] {
   &::-webkit-slider-runnable-track {
     height: 20px;
     width: 100%;
-    background: red;
-    //background: linear-gradient(to right, transparent calc(var(--value) * 1%), $gray-700 0);
+    box-shadow: 0 5px 15px 0 rgba(20, 75, 102, 0.15);
+    background: linear-gradient(
+      to right,
+      transparent calc(var(--value) * 1%),
+      $gray-700 0
+    );
     border-radius: 10px;
   }
 
