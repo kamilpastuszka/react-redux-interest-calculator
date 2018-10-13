@@ -15,9 +15,9 @@ export const Input = props => (
       <input
         className="range-input"
         type="range"
-        min="1"
-        max="100"
-        step="1"
+        min={props.min}
+        max={props.max}
+        step={props.step}
         defaultValue={props.value}
         name={props.name}
         onChange={props.changed}
