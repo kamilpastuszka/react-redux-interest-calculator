@@ -2,9 +2,12 @@
   "name": "react-redux-calculator",
   "version": "1.0.0",
   "description": "react-redux-interest-calculator",
+  "homepage": "https://kamilpastuszka.github.io/react-redux-interest-calculator",
   "main": "index.js",
   "scripts": {
-    "start": "webpack && webpack-dev-server"
+    "start": "webpack && webpack-dev-server",
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d public"
   },
   "repository": {
     "type": "git",
