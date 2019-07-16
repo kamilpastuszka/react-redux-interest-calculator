@@ -2,7 +2,7 @@ import * as actionTypes from './actionTypes';
 import * as utility from '../../utility/utility';
 
 
-const saveResults = (totalPayment, monthlyPayment) => {
+export const saveResults = (totalPayment, monthlyPayment) => {
     return {
         type: actionTypes.GET_RESULTS,
         totalPayment,
@@ -10,7 +10,7 @@ const saveResults = (totalPayment, monthlyPayment) => {
     }
 }
 
-const showLoading = () => {
+export const showLoading = () => {
     return {
         type: actionTypes.SET_CALCULATING
     }
@@ -33,6 +33,3 @@ export const calculateResults = (amount, interest, years) => {
         }
     }
 }
-
-
-

@@ -7,11 +7,12 @@
   "scripts": {
     "start": "webpack && webpack-dev-server",
     "build": "webpack --mode production",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d public",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kamilpastuszka/react-firebase-form.git"
+    "url": "git+https://github.com/kamilpastuszka/react-redux-interest-calculator.git"
   },
   "author": "Kamil Pastuszka",
   "license": "MIT",
@@ -28,6 +29,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "gh-pages": "^2.0.1",
+    "jest": "^23.6.0",
     "node-sass": "^4.9.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

@@ -1,12 +1,12 @@
 import * as actionTypes from "../actions/actionTypes";
 
-const initialState = {
+export const initialState = {
   amount: "10000",
   interest: "10",
   years: "1"
 };
 
-const input = (state = initialState, action) => {
+export const input = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SET_AMOUNT:
       return {
